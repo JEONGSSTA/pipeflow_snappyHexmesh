@@ -10,42 +10,19 @@ FoamFile
     version     2.0;
     format      ascii;
     class       polyBoundaryMesh;
-    location    "constant/polyMesh";
+    location    "0.01/polyMesh";
     object      boundary;
 }
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
-5
+1
 (
-    movingWall
+    cylinder
     {
-        type            patch;
-        nFaces          2000;
-        startFace       115600;
-    }
-    bottomWall
-    {
-        type            patch;
-        nFaces          2000;
-        startFace       117600;
-    }
-    leftside
-    {
-        type            patch;
-        nFaces          2000;
-        startFace       119600;
-    }
-    rightside
-    {
-        type            patch;
-        nFaces          2000;
-        startFace       121600;
-    }
-    frontAndBack
-    {
-        type            patch;
-        nFaces          800;
-        startFace       123600;
+        type            wall;
+        inGroups        1(wall);
+        nFaces          193764;
+        startFace       2082900;
     }
 )
 
