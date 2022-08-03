@@ -51,6 +51,86 @@ actions
 	}
     }
 
+// bottomPatch   
+    {
+        name    bottomPatch;
+        type    faceSet;
+        action  new;
+        source  faceToFace;
+        sourceInfo
+	{
+  	  set cylinder;
+	}
+    }
+    
+    {
+        name    bottomPatch;
+        type    faceSet;
+        action  delete;
+        source  faceToFace;
+        sourceInfo
+	{
+  	  set bottom_patch_negative;
+	} 
+    }
+
+// topPatch    
+    {
+        name    topPatch;
+        type    faceSet;
+        action  new;
+        source  faceToFace;
+        sourceInfo
+	{
+  	  set cylinder;
+	}
+    }
+    
+    {
+        name    topPatch;
+        type    faceSet;
+        action  delete;
+        source  faceToFace;
+        sourceInfo
+	{
+  	  set top_patch_negative;
+	}
+    }
+
+// wallPatch
+    {
+        name    wall;
+        type    faceSet;
+        action  new;
+        source  faceToFace;
+        sourceInfo
+	{
+  	  set cylinder;
+	}
+    }
+    
+    {
+        name    wall;
+        type    faceSet;
+        action  delete;
+        source  faceToFace;
+        sourceInfo
+	{
+  	  set topPatch;
+	}
+    }
+
+    {
+        name    wall;
+        type    faceSet;
+        action  delete;
+        source  faceToFace;
+        sourceInfo
+	{
+  	  set bottomPatch;
+	}
+    }
+
 );
 
 // ************************************************************************* //
